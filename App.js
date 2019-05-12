@@ -1,10 +1,31 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button, TextInput} from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import Scr1 from './src/screens/screen1'
+import io from 'socket.io-client'
+// import { Socket } from 'dgram';
+
+// /home/webi/Documents/AwesomeProject/node_modules/socket.io-client
 
 
+class screen1 extends React.Component {
+  
+  componentDidMount(){
+    const socket = io('http://10.130.12.76:3000')
 
+    socket.on('message',() => {})
+  }
+  
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Button
+          title = "screen2"
+          onPress={() => alert('hello')}
+        />
+      </View>
+    );
+  }
+}
 
 class screen2 extends React.Component {
   constructor(props) {
@@ -31,7 +52,7 @@ class screen2 extends React.Component {
 
 const Rootstack = createStackNavigator({
   Screen1: {
-    screen: Scr1
+    screen: screen1
   },
   Screen2: {
     screen: screen2
@@ -64,3 +85,8 @@ export default class App extends Component {
 //     marginBottom: 5,
 //   },
 // });
+// fc = (val) => {
+//   this.setState({
+//     value: val
+//   })
+// }

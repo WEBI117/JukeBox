@@ -7,14 +7,18 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/socket.io-client": "^1.4.32",
+    "express": "^4.16.4",
     "react": "16.8.3",
     "react-native": "0.59.8",
     "react-native-gesture-handler": "^1.2.1",
-    "react-navigation": "^3.9.1"
+    "react-navigation": "^3.9.1",
+    "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.4.4",
     "@babel/runtime": "7.4.4",
+    "@types/socket.io-client": "^1.4.32",
     "babel-jest": "24.8.0",
     "jest": "24.8.0",
     "metro-react-native-babel-preset": "0.54.0",
